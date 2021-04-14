@@ -19,7 +19,6 @@ public class FileInput implements SalesInput {
         try(BufferedReader in = new BufferedReader(new FileReader("src/main/java/jbelow/springsalesreportingtool/sales.txt"))) {
             String str;
             while ((str = in.readLine()) != null) {
-//                System.out.println(str);
                 String[] index = str.split(",");
 
                 String customer = index[0];
@@ -27,12 +26,7 @@ public class FileInput implements SalesInput {
                 double amount = Double.parseDouble(index[2]);
                 double tax = Double.parseDouble(index[3]);
 
-                //this will be based off of the ShippingPolicy
-                ShippingPolicy things;
-                double shipping = things.getShippingCost();
-
-
-                salesList.add(new Sale(customer, country, amount, tax, shipping));
+                salesList.add(new Sale(customer, country, amount, tax));
 
             }
         }
