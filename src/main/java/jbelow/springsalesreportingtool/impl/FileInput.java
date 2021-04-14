@@ -2,6 +2,7 @@ package jbelow.springsalesreportingtool.impl;
 
 import jbelow.springsalesreportingtool.Sale;
 import jbelow.springsalesreportingtool.iface.SalesInput;
+import jbelow.springsalesreportingtool.iface.ShippingPolicy;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -27,7 +28,9 @@ public class FileInput implements SalesInput {
                 double tax = Double.parseDouble(index[3]);
 
                 //this will be based off of the ShippingPolicy
-                double shipping = 99;
+                ShippingPolicy things;
+                double shipping = things.getShippingCost();
+
 
                 salesList.add(new Sale(customer, country, amount, tax, shipping));
 
