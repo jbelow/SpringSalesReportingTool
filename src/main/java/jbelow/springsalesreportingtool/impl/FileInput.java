@@ -18,7 +18,7 @@ public class FileInput implements SalesInput {
         try(BufferedReader in = new BufferedReader(new FileReader("src/main/java/jbelow/springsalesreportingtool/sales.txt"))) {
             String str;
             while ((str = in.readLine()) != null) {
-                System.out.println(str);
+//                System.out.println(str);
                 String[] index = str.split(",");
 
                 String customer = index[0];
@@ -30,6 +30,7 @@ public class FileInput implements SalesInput {
                 double shipping = 99;
 
                 salesList.add(new Sale(customer, country, amount, tax, shipping));
+
             }
         }
         catch (IOException e) {

@@ -1,9 +1,9 @@
 package jbelow.springsalesreportingtool.impl;
 
-import jbelow.springsalesreportingtool.iface.SalesOutput;
 
+import jbelow.springsalesreportingtool.iface.ReportOutput;
 
-public class ConsoleOutput implements SalesOutput {
+public class ReportOutput_Console implements ReportOutput {
     @Override
     public void output(String text) {
         System.out.println(text);

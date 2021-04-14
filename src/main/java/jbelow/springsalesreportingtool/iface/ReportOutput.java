@@ -1,5 +1,5 @@
 package jbelow.springsalesreportingtool.iface;
 
-public interface SalesOutput {
+public interface ReportOutput {
     void output(String text);
 }
